@@ -40,7 +40,7 @@ const Header = () => (
         <Route path={'/media'} component={Media} />
         <Route path={'/carousel'} component={Carousel} />
         <Route path={'/smth'}  component={PageNotFound} />
-        {/*<Redirect to={'/'} />*/}
+        <Redirect to={'/'} />
       </Switch>
     </main>
   </div>

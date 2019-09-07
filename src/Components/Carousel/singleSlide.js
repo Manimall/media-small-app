@@ -3,16 +3,16 @@ import styles from './Carousel.module.css';
 
 
 const SingleSlide = (props) => {
-	// console.log(props);
-	const {isCurrent, takeFocus, id, children , imageInfo } = props;
-	// console.log(children);
+	const {isCurrent, id, children , imageInfo, takeFocus } = props;
 
 	const ref = useRef(``);
 
 	useEffect(
 		() => {
-		}
-	);
+			if (isCurrent && takeFocus) {
+				ref.current.focus();
+			}
+		}, [isCurrent, takeFocus]	);
 
 	return (
 		<li

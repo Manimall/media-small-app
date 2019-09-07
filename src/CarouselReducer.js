@@ -1,4 +1,3 @@
-import {images} from "./Components/Carousel/DummyApi";
 import { handleActions } from "redux-actions";
 import * as actions from './CarouselActions';
 import { combineReducers } from "redux";
@@ -12,10 +11,10 @@ const isPlaying = handleActions({
 }, false);
 
 const currentIndex = handleActions({
-	[actions.goToNextSlide]: (state, array) => (state.currentIndex + 1) % array.length,
-	[actions.progress]: (state, array) => (state.currentIndex + 1) % array.length,
-	[actions.goToPrevSlide]: (state, array) => (state.currentIndex - 1 + array.length) % array.length,
-	[actions.goTo]: (_state, action) => action.index,
+	[actions.goToNextSlide]: (currentIndex, { payload }) => (currentIndex + 1) % payload.length,
+	[actions.progress]: (currentIndex, { payload }) => (currentIndex + 1) % payload.length,
+	[actions.goToPrevSlide]: (currentIndex, { payload }) => (currentIndex - 1 + payload.length) % payload.length,
+	[actions.goTo]: (_state, action) => action.payload,
 }, 0);
 
 const takeFocus = handleActions({
