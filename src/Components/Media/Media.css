@@ -1,0 +1,13 @@
+.Media {
+	font-size: 32px;
+	text-align: center;
+	flex-direction: column;
+}
+
+.Media h2 {
+	margin-bottom: 30px;
+}
+
+.Media p {
+	margin-bottom: 8px;
+}
